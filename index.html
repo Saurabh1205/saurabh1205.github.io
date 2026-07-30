@@ -341,6 +341,22 @@
                         </div>
                     </article>
                 </div>
+
+                <!-- Sub-Section: Live Auto-Synced GitHub Repositories -->
+                <div class="live-repos-wrapper">
+                    <div class="section-header reveal-on-scroll" style="margin-top: 60px; margin-bottom: 32px;">
+                        <span class="section-subtitle"><i class="fa-solid fa-arrows-rotate fa-spin"></i> REAL-TIME GITHUB SYNC</span>
+                        <h3 class="section-title" style="font-size: 1.8rem;">All Public Repositories</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
+                            Automatically synced live from GitHub whenever you create a new repository.
+                        </p>
+                    </div>
+
+                    <div class="projects-grid" id="github-repos-container">
+                        <!-- Dynamically populated via GitHub API -->
+                        <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Fetching live repositories...</div>
+                    </div>
+                </div>
             </div>
         </section>
 

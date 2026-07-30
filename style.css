@@ -663,11 +663,24 @@ body {
     box-shadow: 0 4px 12px var(--primary-glow);
 }
 
-/* Projects Section */
+/* Projects Section & Live Repos */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 28px;
+}
+
+.loading-spinner {
+    grid-column: 1 / -1;
+    padding: 40px;
+    text-align: center;
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 .project-card {

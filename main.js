@@ -1,6 +1,6 @@
 /* ==========================================================================
    DEVELOPER PORTFOLIO - SAURABH NAGARE
-   Interactive Logic, Particle Canvas & Trending Animations
+   Interactive Logic, Particle Canvas, Animations & Hybrid GitHub Auto-Sync
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,9 +14,83 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     init3DTilt();
     initMagneticButtons();
+    fetchLiveGitHubRepos();
 });
 
-/* 1. Custom Animated Neon Cursor */
+/* Real-Time Live GitHub Repositories Auto-Sync with Smart Filtering & Fallback */
+async function fetchLiveGitHubRepos() {
+    const container = document.getElementById('github-repos-container');
+    if (!container) return;
+
+    try {
+        const response = await fetch('https://api.github.com/users/Saurabh1205/repos?sort=updated&per_page=15');
+        
+        if (!response.ok) {
+            throw new Error(`GitHub API Status: ${response.status}`);
+        }
+
+        const repos = await response.json();
+        
+        // Smart Filter: Exclude forks, profile repo (Saurabh1205), and github.io repo
+        const excludedNames = ['saurabh1205', 'saurabh1205.github.io'];
+        const publicRepos = repos.filter(repo => 
+            !repo.fork && 
+            !excludedNames.includes(repo.name.toLowerCase())
+        );
+
+        if (publicRepos.length === 0) {
+            container.innerHTML = `
+                <div class="loading-spinner" style="grid-column: 1/-1; color: var(--text-muted);">
+                    <i class="fa-brands fa-github"></i> All primary projects are featured above. Visit <a href="https://github.com/Saurabh1205?tab=repositories" target="_blank" style="color: var(--primary); text-decoration: underline;">GitHub Profile</a> to explore all repositories.
+                </div>`;
+            return;
+        }
+
+        container.innerHTML = '';
+
+        publicRepos.slice(0, 6).forEach(repo => {
+            const card = document.createElement('article');
+            card.className = 'project-card glass-card tilt-card reveal-on-scroll revealed';
+
+            const lang = repo.language || 'Kotlin / Android';
+            const description = repo.description || 'Public GitHub repository showcasing mobile software engineering and architecture.';
+            const stars = repo.stargazers_count;
+            const forks = repo.forks_count;
+
+            card.innerHTML = `
+                <div class="project-header">
+                    <div class="project-type"><i class="fa-solid fa-code-branch"></i> ${lang}</div>
+                    <h3 class="project-title">${repo.name}</h3>
+                </div>
+                <p class="project-description">${description}</p>
+                <div class="project-tech">
+                    <span>${lang}</span>
+                    <span><i class="fa-solid fa-star"></i> ${stars}</span>
+                    <span><i class="fa-solid fa-code-fork"></i> ${forks}</span>
+                </div>
+                <div class="project-footer">
+                    <a href="${repo.html_url}" target="_blank" rel="noopener" class="project-link">
+                        <i class="fa-brands fa-github"></i> View Repo <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            `;
+
+            container.appendChild(card);
+        });
+
+        // Re-initialize 3D tilt effect for dynamically appended cards
+        init3DTilt();
+
+    } catch (error) {
+        console.warn('GitHub API fetch fallback engaged:', error);
+        container.innerHTML = `
+            <div class="loading-spinner" style="grid-column: 1/-1; color: var(--text-muted); padding: 30px;">
+                <i class="fa-brands fa-github"></i> Explore all live projects directly on <a href="https://github.com/Saurabh1205?tab=repositories" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: underline;">GitHub (@Saurabh1205)</a>.
+            </div>`;
+    }
+}
+
+/* Custom Animated Neon Cursor */
 function initCustomCursor() {
     const dot = document.getElementById('cursor-dot');
     const ring = document.getElementById('cursor-ring');
@@ -48,7 +122,7 @@ function initCustomCursor() {
     });
 }
 
-/* 2. Interactive Floating Particle Canvas Engine */
+/* Interactive Floating Particle Canvas Engine */
 function initParticleCanvas() {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
@@ -57,16 +131,9 @@ function initParticleCanvas() {
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
 
-    let mouse = { x: null, y: null, radius: 150 };
-
     window.addEventListener('resize', () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
-    });
-
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
     });
 
     class Particle {
@@ -125,7 +192,7 @@ function initParticleCanvas() {
     animate();
 }
 
-/* 3. Scroll Reveal Observer */
+/* Scroll Reveal Observer */
 function initScrollReveal() {
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
@@ -140,7 +207,7 @@ function initScrollReveal() {
     revealElements.forEach(el => observer.observe(el));
 }
 
-/* 4. 3D Tilt Effect on Cards */
+/* 3D Tilt Effect on Cards */
 function init3DTilt() {
     const cards = document.querySelectorAll('.tilt-card');
 
@@ -165,7 +232,7 @@ function init3DTilt() {
     });
 }
 
-/* 5. Magnetic Buttons Effect */
+/* Magnetic Buttons Effect */
 function initMagneticButtons() {
     const magneticBtns = document.querySelectorAll('.magnetic-btn');
 
@@ -197,7 +264,6 @@ function initNavbarScroll() {
             navbar.classList.remove('scrolled');
         }
 
-        // Active Section Highlight
         let currentSection = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 120;
