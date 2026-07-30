@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saurabh Nagare - Senior Android Engineer & Mobile Systems Architect portfolio showcasing Kotlin, Jetpack Compose, Flutter, SDK Architecture, and AI Integrations.">
+    <meta name="keywords" content="Android Developer, Senior Android Engineer, Kotlin, Jetpack Compose, Flutter, SDK Architecture, Saurabh Nagare">
+    <meta name="author" content="Saurabh Nagare">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Saurabh Nagare | Senior Android & Mobile Systems Engineer">
+    <meta property="og:description" content="Senior Android Engineer & Mobile Systems Architect specializing in Kotlin, Jetpack Compose, Flutter, and AI integrations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saurabh1205.github.io">
+
+    <title>Saurabh Nagare | Senior Android & Mobile Architect</title>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Animated Neon Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Background Interactive Particle Canvas & Glow -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo">
+                <span class="logo-accent">&lt;</span>Saurabh<span class="logo-accent">/&gt;</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link" id="link-about">About</a>
+                <a href="#skills" class="nav-link" id="link-skills">Skills</a>
+                <a href="#projects" class="nav-link" id="link-projects">Projects</a>
+                <a href="#architecture" class="nav-link" id="link-architecture">Architecture</a>
+                <a href="#contact" class="nav-link" id="link-contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-sm btn-primary magnetic-btn" id="btn-nav-hire">Get in Touch</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal-on-scroll">
+                    <div class="hero-badge badge-animated">
+                        <span class="pulse-dot"></span> Available for Senior Roles & Architecture Consulting
+                    </div>
+
+                    <h1 class="hero-title">
+                        Building High-Performance<br>
+                        <span class="text-gradient" id="typing-text">Native Android & Mobile Systems</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Hi, I'm <strong>Saurabh Nagare</strong> — a Senior Software Developer with deep expertise in 
+                        Native Android (Kotlin & Jetpack Compose), Cross-Platform Flutter, SDK Architecture, 
+                        and Mobile AI Integrations.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary magnetic-btn" id="btn-hero-projects">
+                            <i class="fa-solid fa-rocket"></i> View Featured Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline magnetic-btn" id="btn-hero-contact">
+                            <i class="fa-solid fa-paper-plane"></i> Let's Talk
+                        </a>
+                        <a href="https://github.com/Saurabh1205" target="_blank" rel="noopener" class="btn btn-icon magnetic-btn" id="btn-hero-github" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn-icon magnetic-btn" id="btn-hero-linkedin" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+
+                    <!-- Metrics Quick Bar -->
+                    <div class="hero-metrics glass-card tilt-card">
+                        <div class="metric-card">
+                            <span class="metric-value" data-target="4">4+</span>
+                            <span class="metric-label">Years Experience</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-card">
+                            <span class="metric-value" data-target="15">15+</span>
+                            <span class="metric-label">Production Apps & SDKs</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-card">
+                            <span class="metric-value" data-target="100">99.9%</span>
+                            <span class="metric-label">Crash-Free Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal-on-scroll delay-1">
+                    <div class="code-card-wrapper tilt-card">
+                        <div class="code-card">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="dot dot-red"></span>
+                                    <span class="dot dot-yellow"></span>
+                                    <span class="dot dot-green"></span>
+                                </div>
+                                <span class="code-title">SeniorAndroidDeveloper.kt</span>
+                            </div>
+                            <div class="code-body">
+                                <pre><code><span class="kwd">class</span> <span class="cls">SaurabhNagare</span> : <span class="cls">MobileArchitect</span> {
+    <span class="kwd">val</span> coreStack = <span class="fn">listOf</span>(
+        <span class="str">"Kotlin"</span>, <span class="str">"Jetpack Compose"</span>,
+        <span class="str">"Coroutines & Flow"</span>, <span class="str">"Dagger/Hilt"</span>
+    )
+    
+    <span class="kwd">val</span> crossPlatform = <span class="fn">listOf</span>(<span class="str">"Flutter"</span>, <span class="str">"Dart"</span>)
+    <span class="kwd">val</span> architecture = <span class="str">"Modular Clean Architecture (MVI)"</span>
+    <span class="kwd">val</span> specializations = <span class="fn">setOf</span>(
+        <span class="str">"SDK Engineering"</span>,
+        <span class="str">"Geofence & Location Engines"</span>,
+        <span class="str">"Background Sync & WorkManager"</span>,
+        <span class="str">"On-Device AI Integration"</span>
+    )
+    
+    <span class="kwd">fun</span> <span class="fn">buildScalableSolution</span>(): <span class="cls">Result</span>&lt;<span class="cls">Success</span>&gt; {
+        <span class="kwd">return</span> <span class="cls">Result</span>.<span class="fn">success</span>(<span class="cls">RobustMobileApp</span>())
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge Elements -->
+                        <div class="floating-badge badge-top-right">
+                            <i class="fa-brands fa-android"></i> Native Android
+                        </div>
+                        <div class="floating-badge badge-bottom-left">
+                            <i class="fa-solid fa-code-branch"></i> Clean Architecture
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-subtitle">BACKGROUND & PHILOSOPHY</span>
+                    <h2 class="section-title">Engineering Reliable Mobile Systems</h2>
+                    <div class="title-bar"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card glass-card tilt-card reveal-on-scroll">
+                        <div class="card-icon glow-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Decoupled SDK Architecture</h3>
+                        <p>Specialized in building modularized, standalone SDKs for Location Services, Geofencing, and Telephony. Engineered to seamlessly integrate into core enterprise ecosystems.</p>
+                    </div>
+
+                    <div class="about-card glass-card tilt-card reveal-on-scroll delay-1">
+                        <div class="card-icon glow-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Reactive & Offline-First</h3>
+                        <p>Expert in state management using Kotlin Coroutines, StateFlow, Room DB, and WorkManager. Apps maintain 100% data integrity even in low or offline connectivity environments.</p>
+                    </div>
+
+                    <div class="about-card glass-card tilt-card reveal-on-scroll delay-2">
+                        <div class="card-icon glow-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Mobile AI & On-Device ML</h3>
+                        <p>Pioneering AI integrations in mobile applications — leveraging LLM APIs, Jetpack Compose, and on-device intelligent assistance to enhance end-user workflows.</p>
+                    </div>
+
+                    <div class="about-card glass-card tilt-card reveal-on-scroll delay-3">
+                        <div class="card-icon glow-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3>Jetpack Compose & Flutter</h3>
+                        <p>Crafting silky-smooth, dynamic 60fps UIs using modern declarative UI paradigms in Jetpack Compose and cross-platform Android solutions with Flutter & Dart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">TECHNICAL EXPERTISE</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <div class="title-bar center"></div>
+                </div>
+
+                <div class="skills-wrapper">
+                    <!-- Core Mobile -->
+                    <div class="skill-category glass-card tilt-card reveal-on-scroll">
+                        <h3 class="category-title"><i class="fa-brands fa-android"></i> Core Mobile Engineering</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag active glow-tag"><i class="fa-brands fa-kotlin"></i> Kotlin</span>
+                            <span class="skill-tag glow-tag"><i class="fa-brands fa-java"></i> Java</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-cubes"></i> Jetpack Compose</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-mobile-button"></i> Flutter & Dart</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-microchip"></i> Android SDK</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-wave-square"></i> Coroutines & Flow</span>
+                        </div>
+                    </div>
+
+                    <!-- Architecture & Persistence -->
+                    <div class="skill-category glass-card tilt-card reveal-on-scroll delay-1">
+                        <h3 class="category-title"><i class="fa-solid fa-sitemap"></i> Architecture & Persistence</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-diagram-project"></i> MVI / MVVM</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-syringe"></i> Dagger / Hilt</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-database"></i> Room & SQLite</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-network-wired"></i> Retrofit & OkHttp</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-gears"></i> WorkManager</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-location-dot"></i> Geofencing API</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & Tools -->
+                    <div class="skill-category glass-card tilt-card reveal-on-scroll delay-2">
+                        <h3 class="category-title"><i class="fa-solid fa-cloud-gear"></i> Tools & Ecosystem</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-fire"></i> Firebase Services</span>
+                            <span class="skill-tag glow-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-terminal"></i> Gradle Build System</span>
+                            <span class="skill-tag glow-tag"><i class="fa-brands fa-docker"></i> Docker & CI/CD</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-vial"></i> JUnit & Mockk</span>
+                            <span class="skill-tag glow-tag"><i class="fa-solid fa-robot"></i> Mobile AI Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-subtitle">PORTFOLIO SHOWCASE</span>
+                    <h2 class="section-title">Featured Projects & SDKs</h2>
+                    <div class="title-bar"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card glass-card tilt-card reveal-on-scroll" id="project-alben">
+                        <div class="project-header">
+                            <div class="project-type"><i class="fa-solid fa-shield-halved"></i> Enterprise App</div>
+                            <h3 class="project-title">Alben SalesCaller & Trip Sync System</h3>
+                        </div>
+                        <p class="project-description">
+                            Enterprise-grade Android application featuring automated background trip tracking, real-time geofence movement evaluation, and resilient offline-first call & visit log sync using WorkManager & Room.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Jetpack Compose</span>
+                            <span>WorkManager</span>
+                            <span>Geofencing</span>
+                            <span>Room DB</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status"><i class="fa-solid fa-circle-check"></i> Production Active</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card glass-card tilt-card reveal-on-scroll delay-1" id="project-ai">
+                        <div class="project-header">
+                            <div class="project-type"><i class="fa-solid fa-robot"></i> AI & Mobile</div>
+                            <h3 class="project-title">Android Compose AI Assistant</h3>
+                        </div>
+                        <p class="project-description">
+                            Modern AI-powered Android assistant built using Jetpack Compose and Kotlin Coroutines. Integrates generative LLM API endpoints with reactive MVI state management for dynamic smart responses.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Jetpack Compose</span>
+                            <span>Generative AI</span>
+                            <span>Coroutines</span>
+                            <span>MVI</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/Saurabh1205/MyAIApplication" target="_blank" rel="noopener" class="project-link" id="link-repo-ai">
+                                <i class="fa-brands fa-github"></i> View Repository <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card glass-card tilt-card reveal-on-scroll delay-2" id="project-sdk">
+                        <div class="project-header">
+                            <div class="project-type"><i class="fa-solid fa-cubes"></i> Core SDK</div>
+                            <h3 class="project-title">PLC Location & Movement Engine SDK</h3>
+                        </div>
+                        <p class="project-description">
+                            Decoupled Android Core SDK designed for ultra-low battery location tracking, state-machine movement evaluation, and telephony call state monitoring across enterprise apps.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin SDK</span>
+                            <span>TelephonyObserver</span>
+                            <span>StateMachine</span>
+                            <span>LocationEngine</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status"><i class="fa-solid fa-cube"></i> Decoupled SDK</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card glass-card tilt-card reveal-on-scroll delay-3" id="project-flutter">
+                        <div class="project-header">
+                            <div class="project-type"><i class="fa-solid fa-mobile-screen"></i> Flutter Cross-Platform</div>
+                            <h3 class="project-title">Android Multi-Tier Mobile Solutions</h3>
+                        </div>
+                        <p class="project-description">
+                            Cross-platform Android mobile application built with Flutter & Dart, implementing Provider/Bloc state management, RESTful API integrations, and smooth native device interactions.
+                        </p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Android</span>
+                            <span>REST APIs</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status"><i class="fa-brands fa-flutter"></i> Flutter App</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture & Engineering Standards Section -->
+        <section class="section architecture-section" id="architecture">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">ENGINEERING STANDARDS</span>
+                    <h2 class="section-title">Architecture Philosophy</h2>
+                    <div class="title-bar center"></div>
+                </div>
+
+                <div class="architecture-grid">
+                    <div class="arch-box glass-card tilt-card reveal-on-scroll">
+                        <div class="arch-number">01</div>
+                        <h3>Clean Layer Separation</h3>
+                        <p>Strict boundaries between UI (Compose), Domain (Pure Kotlin Use Cases), and Data (Room/Retrofit Repositories) ensuring 100% testability and zero framework leaks.</p>
+                    </div>
+
+                    <div class="arch-box glass-card tilt-card reveal-on-scroll delay-1">
+                        <div class="arch-number">02</div>
+                        <h3>Unidirectional Data Flow (UDF)</h3>
+                        <p>State is single-source-of-truth. UI emits User Intents, ViewModels execute use cases and emit immutable StateFlow objects back to the Compose UI layer.</p>
+                    </div>
+
+                    <div class="arch-box glass-card tilt-card reveal-on-scroll delay-2">
+                        <div class="arch-number">03</div>
+                        <h3>Resilient Background Execution</h3>
+                        <p>Heavy sync jobs, telemetry tracking, and location logging are delegated to WorkManager to guarantee execution even through app kills and system reboots.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="contact-card glass-card reveal-on-scroll">
+                    <div class="contact-info">
+                        <span class="section-subtitle">LET'S CONNECT</span>
+                        <h2 class="section-title">Interested in Working Together?</h2>
+                        <p class="contact-lead">
+                            I am open to Senior Android Engineering roles, Mobile Systems Architecture projects, and Technical Consulting. Feel free to drop a message or reach out directly!
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <div class="detail-icon glow-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <span class="detail-label">Email</span>
+                                    <a href="mailto:saurabh.nagare.dev@gmail.com" class="detail-value">saurabh.nagare.dev@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon glow-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <span class="detail-label">Location</span>
+                                    <span class="detail-value">Pune, Maharashtra, India</span>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon glow-icon"><i class="fa-brands fa-github"></i></div>
+                                <div>
+                                    <span class="detail-label">GitHub Profile</span>
+                                    <a href="https://github.com/Saurabh1205" target="_blank" rel="noopener" class="detail-value">github.com/Saurabh1205</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name">Your Name</label>
+                            <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-email">Your Email</label>
+                            <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" class="form-input form-textarea" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block magnetic-btn" id="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                        <div class="form-status" id="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#hero" class="footer-logo">&lt;Saurabh/&gt;</a>
+                <p>© 2026 Saurabh Nagare. Crafted with HTML5, Vanilla CSS & JavaScript.</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="https://github.com/Saurabh1205" target="_blank" rel="noopener" title="GitHub" class="magnetic-btn"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener" title="LinkedIn" class="magnetic-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:saurabh.nagare.dev@gmail.com" title="Email" class="magnetic-btn"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
